@@ -4,53 +4,59 @@ from typing import Optional
 import numpy as np
 
 class InventorySimulation:
-    """ Class to run inventory simluations and analyse results."""
+    """ Class to run inventory simulations and analyze results. """
 
-    def __init__(self,params : InventoryParams):
+    def __init__(self, params: InventoryParams):
         self.D = params.D
-        self.T-total = params.T_total
+        self.T_total = params.T_total
         self.LD = params.LD
         self.T = params.T
         self.Q = params.Q
         self.initial_ioh = params.initial_ioh
-
-        #Dailty demand rate
-        self.D_day = self.D / self.T_total
-
-        #Initialze Dataframe to store simulation results
-        self.sim = pd.Dataframe({
-            'time' : np.array(range(1,self.T_total + 1))
-        })
+        self.sigma = params.sigma
         
-    def order(self,t,T,Q,start_day = 1):
-        """ Simple ORdering Policy :  Order Q units every T days starting from start_day."""
+        # Daily demand rate
+        self.D_day = self.D / self.T_total
+        
+        # Initialize DataFrame to store simulation results
+        self.sim = pd.DataFrame({
+            'time': np.array(range(1, self.T_total + 1))
+        })
+    
+    def order(self, t, T, Q, start_day = 1):
+        """ Simple Ordering Policy: Order Q units every T days starting from start_day. """
         return Q if (t>start_day and (t - start_day) % T == 0) else 0
     
+    def order_leadtime(self, t, T, Q, LD, start_day = 1):
+        """ Simple Ordering Policy: Order Q units every T days starting from start_day. """
+        return Q if (t>start_day and ((t - start_day) + (LD-1)) % T == 0) else 0
+    
     def simulation_1(self):
-        """ Simple FIxedcycle ordering policy simulation not considering lead time"""
+        """ Simple Fixed-cycle ordering policy simulation not considering lead time. """
         sim_1 = self.sim.copy()
-
+        
         # Daily Demand
         sim_1['demand'] = self.D_day
-
+        
         # Orders Placed
-        T = int(self.D)
-        Q = float(self.D)
-        sim_1['order'] = sim_1['time'].apply(lambda t : self.order(t,T,Q))
-
+        T = int(self.T)
+        Q = float(self.Q)
+        sim_1['order'] = sim_1['time'].apply(lambda t: self.order(t, T, Q))
+        
         # Orders Received (considering lead time)
         LD = int(self.LD)
-        sim_1['receipt'] = sim_1['order'].shodt(LD).fillna(0)
-
-        # Inventory on Hand(IOH)
+        sim_1['receipt'] = sim_1['order'].shift(LD).fillna(0)
+        
+        # Inventory on Hand (IOH)
         ioh = [self.initial_ioh]
-        for i in range(1,len(sim_1)):
-            # subtract demand
-            new_ioh = ioh[-1] - sim_1.loc[self.t,'demand']
+        for t in range(1, len(sim_1)):
+            # substract demand
+            new_ioh = ioh[-1] - sim_1.loc[t, 'demand']
             # add received orders
-            new_ioh += sim_1.loc[i,'receipt']
+            new_ioh += sim_1.loc[t, 'receipt']
             # record new IOH
             ioh.append(new_ioh)
-        sim_1['ioh'] = ioh                          
-
+        sim_1['ioh'] = ioh
+        
         return sim_1
+    
