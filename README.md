@@ -15,15 +15,15 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 - Receipts show up after LD days
 - Negative inventory = stockout (we keep it simple)
 
-## Parameters
+## Key Parameters
 
--Parameter | What It Is |
-
-- D =  Annual demand 
-- D_day = Daily demand 
-- T = Order cycle (days) 
-- Q = Order quantity 
-- LD = Lead time (days) 
+- `D`: annual demand (units/year)
+- `T_total`: number of days in the simulation horizon
+- `D_day`: daily demand (`D` divided by `T_total`)
+- `T`: cycle length in days (spacing between order placements)
+- `Q`: order quantity (often `D_day × T` in the baseline)
+- `LD`: lead time in days (order → receipt)
+- `initial_ioh`: starting inventory on hand
 
 ## Scenarios
 
