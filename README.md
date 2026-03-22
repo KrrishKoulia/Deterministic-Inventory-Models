@@ -19,11 +19,11 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 
 -Parameter | What It Is |
 
-- D | Annual demand |
-- D_day | Daily demand |
-- T | Order cycle (days) |
-- Q | Order quantity |
-- LD | Lead time (days) |
+- D =  Annual demand 
+- D_day = Daily demand 
+- T = Order cycle (days) 
+- Q = Order quantity 
+- LD = Lead time (days) 
 
 ## Scenarios
 
