@@ -3,5 +3,5 @@ Literal restricts a variable to only specific, exact values.
 BaseModel is the foundation of Pydantic - it creates data validation classes. Think of it as a "supercharged" Python dataclass.
 Field adds extra validation, metadata, and configuration to model fields.
 
-##Article which we are using as reference
+Article which we are using as reference
 https://www.samirsaci.com/tag/inventory-management/
