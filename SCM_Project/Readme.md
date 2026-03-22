@@ -1,4 +1,4 @@
-# Inventory Management – Deterministic Inventory Management Rules (Part 1)
+# Deterministic Inventory Models
 
 This tutorial walks through a simple, deterministic inventory simulation under constant daily demand.  
 The goal is to understand how lead time and ordering policy change the shape of inventory on hand (IOH) over time, while keeping the analysis logic in Python modules and the visuals in a Jupyter notebook for teaching.
