@@ -27,35 +27,33 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 
 ## Scenarios
 
+## Scenario 1,2,3: 
+* Visual Representation Specifically for scenario 1*
+
 **1. LD = 1 day** — Smooth sawtooth. Inventory hits zero, receipt arrives next day. No drama.
 
 **2. LD = 2 days** — Same policy, longer wait. Inventory goes negative. Timing is the problem.
 
 **3. LD = 2, bigger Q** — Order more to cover the gap. Fixes stockouts, but average inventory climbs. Treats symptom, not cause.
-
-## Scenario 1,2,3: 
-* Visual Representation Specifically for scenario 1*
-
 ![Preview](scenario_1.png)
 
-**4. LD = 2, order earlier** — Order when inventory hits ROP = D_day × LD. Clean sawtooth returns. No excess, no stockouts.
 
 ## Scenario 4: 
 * Visual Representation *
-
+**4. LD = 2, order earlier** — Order when inventory hits ROP = D_day × LD. Clean sawtooth returns. No excess, no stockouts.
 ![Preview](scenario_4.png)
 
-**5. EOQ, LD = 1** — Classic formula. Minimizes ordering + holding cost. Average inventory sits at Q*/2.
 
 ## Scenario 5: 
 * Visual Representation *
+**5. EOQ, LD = 1** — Classic formula. Minimizes ordering + holding cost. Average inventory sits at Q*/2.
 
 ![Preview](scenario_5.png)
 
-**6. Stochastic demand, LD = 5** — Demand varies. Fixed cycle alone won't cut it. Safety stock enters the chat.
 
 ## Scenario 6: 
 * Visual Representation *
+**6. Stochastic demand, LD = 5** — Demand varies. Fixed cycle alone won't cut it. Safety stock enters the chat.
 
 ![Preview](scenario_6.png)
 
