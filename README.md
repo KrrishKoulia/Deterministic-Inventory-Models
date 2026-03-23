@@ -28,7 +28,6 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 ## Scenarios
 
 ## Scenario 1,2,3: 
-* Visual Representation Specifically for scenario 1*
 
 ![Preview](scenario_1.png)
 
@@ -42,7 +41,6 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 
 
 ## Scenario 4: 
-* Visual Representation *
 
 ![Preview](scenario_4.png)
 
@@ -51,7 +49,6 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 
 
 ## Scenario 5: 
-* Visual Representation *
 
 ![Preview](scenario_5.png)
 
@@ -60,7 +57,6 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 
 
 ## Scenario 6: 
-* Visual Representation *
 
 ![Preview](scenario_6.png)
 
