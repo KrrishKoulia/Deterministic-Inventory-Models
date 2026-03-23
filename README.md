@@ -33,11 +33,31 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 
 **3. LD = 2, bigger Q** — Order more to cover the gap. Fixes stockouts, but average inventory climbs. Treats symptom, not cause.
 
+## Scenario 1,2,3: 
+* Visual Representation Specifically for scenario 1*
+
+![Preview](scenario_1.png)
+
 **4. LD = 2, order earlier** — Order when inventory hits ROP = D_day × LD. Clean sawtooth returns. No excess, no stockouts.
+
+## Scenario 4: 
+* Visual Representation *
+
+![Preview](scenario_4.png)
 
 **5. EOQ, LD = 1** — Classic formula. Minimizes ordering + holding cost. Average inventory sits at Q*/2.
 
+## Scenario 5: 
+* Visual Representation *
+
+![Preview](scenario_5.png)
+
 **6. Stochastic demand, LD = 5** — Demand varies. Fixed cycle alone won't cut it. Safety stock enters the chat.
+
+## Scenario 6: 
+* Visual Representation *
+
+![Preview](scenario_6.png)
 
 ## Getting Started
 
