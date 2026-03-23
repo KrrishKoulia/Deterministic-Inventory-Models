@@ -30,12 +30,13 @@ A deterministic inventory simulation toolkit. Models how different ordering poli
 ## Scenario 1,2,3: 
 * Visual Representation Specifically for scenario 1*
 
+![Preview](scenario_1.png)
 **1. LD = 1 day** — Smooth sawtooth. Inventory hits zero, receipt arrives next day. No drama.
 
 **2. LD = 2 days** — Same policy, longer wait. Inventory goes negative. Timing is the problem.
 
 **3. LD = 2, bigger Q** — Order more to cover the gap. Fixes stockouts, but average inventory climbs. Treats symptom, not cause.
-![Preview](scenario_1.png)
+
 
 
 ## Scenario 4: 
